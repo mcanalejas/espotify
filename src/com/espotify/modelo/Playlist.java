@@ -2,6 +2,8 @@ package com.espotify.modelo;
 
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -65,7 +67,7 @@ public class Playlist implements java.io.Serializable {
 		this.likes = likes;
 	}
 
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinTable(name = "playlist_cancion", catalog = "espotify", joinColumns = {
 			@JoinColumn(name = "playlist_id", nullable = false, updatable = false) }, inverseJoinColumns = {
 					@JoinColumn(name = "cancion_id", nullable = false, updatable = false) })
