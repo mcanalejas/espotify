@@ -6,8 +6,7 @@ import com.espotify.utilidades.Utilidades;
 
 public class Test {
 	public static void main(String[] args) {
-		UtilsCancion uc = new UtilsCancion();
-		UtilsPlaylist up = new UtilsPlaylist();
+		
 
 		Playlist p1 = new Playlist();
 		p1.setLikes(50);
@@ -21,7 +20,7 @@ public class Test {
 		c1.setReproducciones(5000000);
 		c1.getPlaylists().add(p1);
 
-		uc.almacenaCancion(c1);
+		UtilsCancion.almacenaCancion(c1);
 		Utilidades.getSessionFactory().close();
 	}
 }
